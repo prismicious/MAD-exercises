@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#E8E9F3">
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="340dp"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_margin="8dp"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="2dp"
+        app:strokeWidth="8dp">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:text="Scenario: Decatastrophizing"
+                android:textColor="#272635"
+                android:textSize="24dp"
+                android:textStyle="bold"
+                app:fontFamily="@font/lato" />
+
+            <TextView
+                android:id="@+id/subtitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/title"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="10dp"
+                android:text="@string/decata4"
+                android:textColor="#272635"
+                android:textSize="16dp"
+                app:fontFamily="@font/lato" />
+
+            <ImageView
+                android:id="@+id/img"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:layout_below="@id/subtitle"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="20dp"
+                android:src="@drawable/placeholder_img" />
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textField_decata4"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/img"
+                android:layout_centerHorizontal="true"
+
+                android:hint="I could fail the test"
+                app:hintTextColor="#d9d9d9">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:textColorHint="#00111111" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:layout_width="100dp"
+                android:layout_height="50dp"
+                android:layout_below="@+id/textField_decata4"
+                android:layout_centerHorizontal="true"
+                android:background="@color/colorPrimary"
+                android:onClick="onClick_decata4"
+                android:text="Next"
+                android:textStyle="bold"
+                android:typeface="normal"
+                app:backgroundTint="@color/colorPrimary"
+                app:cornerRadius="4dp" />
+        </RelativeLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+</RelativeLayout>

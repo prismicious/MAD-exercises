@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Test Anxiety CBT</string>
+    <string name="title_activity_test">TestActivity</string>
+    <string name="decata1">What is the worst thing that could happen?</string>
+    <string name="decata2">What events would need to take place for the worst to happen?</string>
+    <string name="decata3">Is it likely that all events take place?</string>
+    <string name="decata4">What is a more likely outcome, given what you know?</string>
+</resources>

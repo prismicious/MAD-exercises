@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="#E8E9F3"
+    >
+
+    <com.google.android.material.card.MaterialCardView
+            android:layout_width="340dp"
+            android:layout_height="60dp"
+            android:layout_centerInParent="true"
+            android:layout_marginStart="4dp"
+            android:layout_marginLeft="4dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="4dp"
+            android:layout_marginRight="4dp"
+            android:layout_marginBottom="4dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="4dp"
+            app:strokeWidth="8dp">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+                <TextView
+                    android:id="@+id/cardInput1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/layoutTheme"
+                    android:fontFamily="@font/lato"
+                    android:textSize="18dp"
+                    android:layout_marginTop="10dp"
+                    android:textAlignment="center"
+                    android:text="Test" />
+                <TextView
+                    android:textAlignment="center"
+                    style="@style/layoutTheme"
+                    android:id="@+id/cardInput2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/cardInput1"
+                    android:text="Test2" />
+
+        </RelativeLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/expandedCard"
+        android:layout_width="340dp"
+        android:layout_height="120dp"
+        android:layout_centerInParent="true"
+        android:layout_marginStart="4dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginRight="4dp"
+        android:layout_marginBottom="4dp"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="4dp"
+        app:strokeWidth="8dp">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+            <TextView
+                android:id="@+id/cardInput3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/layoutTheme"
+                android:fontFamily="@font/lato"
+                android:textSize="18dp"
+                android:layout_marginTop="10dp"
+                android:textAlignment="center"
+                android:text="ExpandTest1" />
+            <TextView
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                style="@style/layoutTheme"
+                android:id="@+id/cardInput4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/cardInput3"
+                android:text="ExpandTest2" />
+
+        </RelativeLayout>
+    </com.google.android.material.card.MaterialCardView>
+</RelativeLayout>

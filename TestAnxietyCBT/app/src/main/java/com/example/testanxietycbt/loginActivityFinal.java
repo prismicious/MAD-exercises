@@ -153,7 +153,7 @@ public class loginActivityFinal extends AppCompatActivity implements View.OnClic
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if(task.isSuccessful()){
                     Toast.makeText(loginActivityFinal.this, "Login successful!", Toast.LENGTH_LONG).show();
-                    startActivity(new Intent(loginActivityFinal.this, MainActivity.class));
+                    startActivity(new Intent(loginActivityFinal.this, Dashboard.class));
                     progressBar.setVisibility(View.GONE);
                 }else{
                     Toast.makeText(loginActivityFinal.this, "Failed to login! Please check credentials.", Toast.LENGTH_LONG).show();

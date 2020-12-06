@@ -13,6 +13,9 @@ public class Task implements Serializable {
         TaskName = taskName;
         TimeTaskCompleted = timeTaskCompleted;
     }
+
+    public Task() {
+    }
 }
 
 

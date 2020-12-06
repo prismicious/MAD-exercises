@@ -6,12 +6,17 @@
     android:background="#E8E9F3">
 
 
-
     <com.google.android.material.card.MaterialCardView
+        android:id="@+id/decataCard2"
         android:layout_width="340dp"
-        android:layout_height="wrap_content"
+        android:layout_height="400dp"
         android:layout_centerInParent="true"
-        android:layout_margin="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
         app:cardCornerRadius="12dp"
         app:cardElevation="2dp"
         app:strokeWidth="8dp">
@@ -31,55 +36,61 @@
                 android:textSize="24dp"
                 android:textStyle="bold"
                 app:fontFamily="@font/lato" />
-    <TextView
-        android:id="@+id/subtitle"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:textColor="#272635"
-        android:textSize="16dp"
-        app:fontFamily="@font/lato"
-        android:text="@string/decata2"
-        android:layout_below="@id/title"
-        />
 
-    <ImageView
-        android:id="@+id/img"
-        android:layout_below="@id/subtitle"
-        android:layout_width="300dp"
-        android:layout_height="300dp"
-        android:layout_marginTop="20dp"
-        android:layout_centerHorizontal="true"
-        android:src="@drawable/placeholder_img"/>
+            <TextView
+                android:id="@+id/subtitle"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/title"
+                android:layout_centerHorizontal="true"
+                android:text="@string/decata2"
+                android:textColor="#272635"
+                android:textSize="16dp"
+                app:fontFamily="@font/lato" />
+
+            <ImageView
+                android:id="@+id/img"
+                android:layout_width="wrap_content"
+                android:layout_height="200dp"
+                android:layout_below="@id/subtitle"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:src="@drawable/placeholder_img" />
 
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textField_decata2"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_below="@id/img"
-        android:hint=""
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textField_decata2"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/img"
+                android:layout_centerHorizontal="true"
 
-        app:hintTextColor="#d9d9d9"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+                android:hint=""
+                app:hintTextColor="#d9d9d9">
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            />
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
 
-    </com.google.android.material.textfield.TextInputLayout>
+            </com.google.android.material.textfield.TextInputLayout>
 
-    <com.google.android.material.button.MaterialButton
+            <com.google.android.material.button.MaterialButton
 
-        android:layout_width="100dp"
-        android:layout_height="50dp"
-        android:layout_below="@+id/textField_decata2"
-        android:layout_centerHorizontal="true"
-        android:onClick="onClick_decata2"
-        android:text="Next" />
+                android:layout_width="100dp"
+                android:layout_height="50dp"
+                android:layout_below="@+id/textField_decata2"
+                android:layout_centerHorizontal="true"
+                android:onClick="onClick_decata2"
+                android:text="Next" />
 
         </RelativeLayout>
     </com.google.android.material.card.MaterialCardView>
+
+    <com.kofigyan.stateprogressbar.StateProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:spb_currentStateNumber="two"
+        android:layout_below="@id/decataCard2"
+        app:spb_maxStateNumber="four"/>
 </RelativeLayout>

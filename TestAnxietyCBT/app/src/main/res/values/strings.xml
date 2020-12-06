@@ -5,4 +5,6 @@
     <string name="decata2">What events would need to take place for the worst to happen?</string>
     <string name="decata3">Is it likely that all events take place?</string>
     <string name="decata4">What is a more likely outcome, given what you know?</string>
+    <string name="facebook_app_id">396697304905119</string>
+    <string name="fb_login_protocol_scheme">fb396697304905119</string>
 </resources>

@@ -1,5 +1,6 @@
 package com.example.testanxietycbt;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
@@ -43,5 +44,9 @@ public class DecataOverviewFragment extends AppCompatActivity {
         input4.setText(Answer4);
 
         Log.i("Answer1 =>", Answer1 + "Answer2 => " + Answer2 + "Answer3 => " + Answer3 + "Answer4 => " + Answer4);
+    }
+
+    public void onClick(View v){
+        startActivity(new Intent(this, MainActivity.class));
     }
 }

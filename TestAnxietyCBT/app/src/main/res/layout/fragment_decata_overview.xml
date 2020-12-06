@@ -224,7 +224,7 @@
             android:layout_below="@+id/Card4"
             android:layout_centerInParent="true"
             android:background="@color/colorPrimary"
-            android:onClick="onClick_decata4"
+            android:onClick="onClick"
             android:text="Next"
             android:textStyle="bold"
             android:typeface="normal"

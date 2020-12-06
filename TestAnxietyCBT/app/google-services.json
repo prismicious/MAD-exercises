@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "984046344858",
+    "firebase_url": "https://examanxietycbt.firebaseio.com",
+    "project_id": "examanxietycbt",
+    "storage_bucket": "examanxietycbt.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:984046344858:android:a685c5d4f94985fb1f1d23",
+        "android_client_info": {
+          "package_name": "com.example.testanxietycbt"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "984046344858-93hrrsggfb9gkb3kagbri6lrhcsff465.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.testanxietycbt",
+            "certificate_hash": "23f7595fb68cfe70e3ac82bb280498d3747bccdf"
+          }
+        },
+        {
+          "client_id": "984046344858-20v7slki81c78hoo46bagh221cot4236.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCxnpwKbExL0U-_JCr10LvlrFqgbF74SCg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "984046344858-20v7slki81c78hoo46bagh221cot4236.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

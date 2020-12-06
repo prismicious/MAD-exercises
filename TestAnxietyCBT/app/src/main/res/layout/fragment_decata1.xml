@@ -6,10 +6,16 @@
     android:background="#E8E9F3">
 
     <com.google.android.material.card.MaterialCardView
+        android:id="@+id/decataCard1"
         android:layout_width="340dp"
-        android:layout_height="wrap_content"
+        android:layout_height="400dp"
         android:layout_centerInParent="true"
-        android:layout_margin="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
         app:cardCornerRadius="12dp"
         app:cardElevation="2dp"
         app:strokeWidth="8dp">
@@ -45,7 +51,7 @@
             <ImageView
                 android:id="@+id/img"
                 android:layout_width="match_parent"
-                android:layout_height="300dp"
+                android:layout_height="200dp"
                 android:layout_below="@id/subtitle"
                 android:layout_centerInParent="true"
                 android:layout_marginTop="20dp"
@@ -72,6 +78,7 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.button.MaterialButton
+                android:id="@+id/nextButton1"
                 android:layout_width="100dp"
                 android:layout_height="50dp"
                 android:layout_below="@+id/textField_decata1"
@@ -83,7 +90,14 @@
                 android:typeface="normal"
                 app:backgroundTint="@color/colorPrimary"
                 app:cornerRadius="4dp" />
+
         </RelativeLayout>
     </com.google.android.material.card.MaterialCardView>
+    <com.kofigyan.stateprogressbar.StateProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:spb_currentStateNumber="one"
+        android:layout_below="@id/decataCard1"
+        app:spb_maxStateNumber="four"/>
 
 </RelativeLayout>

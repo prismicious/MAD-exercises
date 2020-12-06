@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Process">
+
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/title"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="Add new process"
+        android:layout_centerHorizontal="true"
+        android:textSize="26dp"
+        android:fontFamily="@font/lato"
+        android:layout_marginTop="40dp"
+        android:textColor="@color/colorPrimary" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+        android:id="@+id/name"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:layout_below="@id/title"
+        android:layout_centerHorizontal="true"
+        android:hint="Enter name">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+        android:id="@+id/desc"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/name"
+        android:layout_centerHorizontal="true"
+        android:hint="Enter description">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <com.google.android.material.button.MaterialButton
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:id="@+id/dialog_bt_date"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/desc"
+        android:layout_centerHorizontal="true"
+        android:text="Insert date"
+        android:textColorHint="@color/mdtp_white"
+        />
+
+    <com.google.android.material.button.MaterialButton
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:id="@+id/dialog_bt_time"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/dialog_bt_date"
+        android:layout_centerHorizontal="true"
+        android:text="Insert time"
+        />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/submitbutton"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/dialog_bt_time"
+        android:text="submit"
+        android:layout_centerHorizontal="true"/>
+</RelativeLayout>

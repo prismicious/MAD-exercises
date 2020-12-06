@@ -49,7 +49,7 @@
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/expandedCard"
         android:layout_width="340dp"
-        android:layout_height="120dp"
+        android:layout_height="wrap_content"
         android:layout_centerInParent="true"
         android:layout_marginStart="4dp"
         android:layout_marginLeft="4dp"
@@ -65,7 +65,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" >
             <TextView
-                android:id="@+id/cardInput3"
+                android:id="@+id/expandedCardTitle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 style="@style/layoutTheme"
@@ -75,14 +75,107 @@
                 android:textAlignment="center"
                 android:text="ExpandTest1" />
             <TextView
+                android:layout_marginTop="20dp"
                 android:layout_marginLeft="20dp"
-                android:layout_marginTop="10dp"
+                android:textColor="@color/colorPrimary"
                 style="@style/layoutTheme"
-                android:id="@+id/cardInput4"
+                android:layout_marginRight="8dp"
+                android:id="@+id/expandedCardQuestion1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/cardInput3"
-                android:text="ExpandTest2" />
+                android:layout_below="@id/expandedCardTitle"
+                android:text="expandedCardQuestion1"
+                android:textStyle="bold"
+                />
+            <TextView
+                android:layout_marginLeft="20dp"
+                style="@style/layoutTheme"
+
+                android:layout_marginRight="8dp"
+                android:id="@+id/expandedCardAnswer1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/expandedCardQuestion1"
+                android:text="expandedCardAnswer1"
+                />
+
+
+            <TextView
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="20dp"
+                style="@style/layoutTheme"
+                android:textColor="@color/colorPrimary"
+                android:layout_marginRight="8dp"
+                android:id="@+id/expandedCardQuestion2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/expandedCardAnswer1"
+                android:text="expandedCardQuestion2"
+                android:textStyle="bold"
+                />
+            <TextView
+                android:layout_marginLeft="20dp"
+                style="@style/layoutTheme"
+                android:layout_marginRight="8dp"
+                android:id="@+id/expandedCardAnswer2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/expandedCardQuestion2"
+                android:text="expandedCardAnswer2"
+                />
+
+            <TextView
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="20dp"
+                style="@style/layoutTheme"
+                android:textColor="@color/colorPrimary"
+                android:layout_marginRight="8dp"
+                android:id="@+id/expandedCardQuestion3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/expandedCardAnswer2"
+                android:text="expandedCardQuestion3"
+                android:textStyle="bold"
+                />
+            <TextView
+                android:layout_marginLeft="20dp"
+                style="@style/layoutTheme"
+
+                android:layout_marginRight="8dp"
+                android:id="@+id/expandedCardAnswer3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/expandedCardQuestion3"
+                android:text="expandedCardAnswer3"
+                />
+
+            <TextView
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="20dp"
+                style="@style/layoutTheme"
+                android:textColor="@color/colorPrimary"
+                android:layout_marginRight="8dp"
+                android:id="@+id/expandedCardQuestion4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/expandedCardAnswer3"
+                android:text="expandedCardQuestion4"
+                android:textStyle="bold"
+                />
+            <TextView
+                android:layout_marginLeft="20dp"
+                style="@style/layoutTheme"
+
+                android:layout_marginRight="8dp"
+                android:id="@+id/expandedCardAnswer4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/expandedCardQuestion4"
+                android:text="expandedCardAnswer4"
+                android:layout_marginBottom="20dp"
+                />
+
+
 
         </RelativeLayout>
     </com.google.android.material.card.MaterialCardView>

@@ -146,7 +146,7 @@ public class MainActivity extends AppCompatActivity {
         Date currentTime = Calendar.getInstance().getTime();
         SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy - HH:mm:ss", Locale.getDefault());
         currentDateandTime = sdf.format(new Date());
-        Task task = new DecatastrophizingTask("Decatastrophizing Task", currentDateandTime, inputText1, inputText2, inputText3, inputText4);
+        Task task = new Task("Decatastrophizing Task", currentDateandTime, inputText1, inputText2, inputText3, inputText4);
       //  ref3.setValue(task);
         id = get.getInt("id", 0);
         editor.putInt("id",id+1);

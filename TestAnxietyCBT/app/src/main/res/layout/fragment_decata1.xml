@@ -55,7 +55,7 @@
                 android:layout_below="@id/subtitle"
                 android:layout_centerInParent="true"
                 android:layout_marginTop="20dp"
-                android:src="@drawable/placeholder_img" />
+                android:src="@drawable/ic_undraw_in_thought_gjsf" />
 
 
             <com.google.android.material.textfield.TextInputLayout

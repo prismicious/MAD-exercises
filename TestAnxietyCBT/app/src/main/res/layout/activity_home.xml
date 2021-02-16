@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".homeActivity"
+    android:background="#E8E9F3"
+    >
+
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNav"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="?android:attr/windowBackground"
+        app:menu="@menu/bottom_navigation" />
+
+    <TextView
+        android:id="@+id/welcome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/exerciseCard"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="20dp"
+        android:text="Welcome back"
+        android:textColor="#272635"
+        android:textSize="20dp"
+        app:fontFamily="@font/lato" />
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/exerciseCard"
+        android:layout_width="340dp"
+        android:layout_height="300dp"
+        android:layout_centerInParent="true"
+        android:layout_margin="8dp"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="2dp"
+        app:strokeWidth="8dp">
+
+
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/exerciseTitle"
+                style="@style/layoutTheme"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginStart="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="20dp"
+                android:text="Welcome to TestAnxiety CBT! This application aims to provide you with tools to better handle test anxiety.   "
+                android:textAlignment="center"
+                android:textColor="#272635"
+                android:textSize="18dp"
+                app:fontFamily="@font/lato" />
+
+            <TextView
+                android:id="@+id/exerciseTitle2"
+                style="@style/layoutTheme"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/exerciseTitle"
+                android:layout_centerHorizontal="true"
+                android:layout_marginStart="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="10dp"
+                android:text="Your current exam is scheduled"
+                android:textAlignment="center"
+                android:textColor="#272635"
+                android:textSize="18dp"
+                app:fontFamily="@font/lato" />
+
+            <TextView
+                android:id="@+id/process_name"
+                style="@style/layoutTheme"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/exerciseTitle2"
+                android:layout_centerHorizontal="false"
+                android:layout_marginStart="40dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginRight="0dp"
+                android:layout_marginBottom="20dp"
+                android:gravity="start"
+                android:textAlignment="textStart"
+                android:textColor="@color/colorPrimary"
+                android:textSize="14dp"
+                app:fontFamily="@font/lato" />
+
+            <TextView
+                android:id="@+id/process_at"
+                style="@style/layoutTheme"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/exerciseTitle2"
+                android:layout_centerHorizontal="false"
+                android:layout_marginStart="0dp"
+                android:layout_marginLeft="6dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginRight="0dp"
+                android:layout_marginBottom="20dp"
+                android:layout_toRightOf="@id/process_name"
+                android:text="on"
+                android:textAlignment="center"
+                android:textColor="@android:color/black"
+                android:textSize="14dp"
+                app:fontFamily="@font/lato" />
+
+            <TextView
+                android:id="@+id/process_datetest"
+                style="@style/layoutTheme"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/exerciseTitle2"
+                android:layout_centerHorizontal="false"
+                android:layout_marginStart="0dp"
+                android:layout_marginLeft="6dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginRight="0dp"
+                android:layout_marginBottom="20dp"
+                android:layout_toRightOf="@id/process_at"
+                android:textAlignment="center"
+                android:textColor="@color/colorPrimary"
+                android:textSize="14dp"
+                app:fontFamily="@font/lato" />
+
+            <TextView
+                android:id="@+id/process_at2"
+                style="@style/layoutTheme"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/exerciseTitle2"
+                android:layout_centerHorizontal="false"
+                android:layout_marginLeft="6dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginRight="0dp"
+                android:layout_marginBottom="20dp"
+                android:layout_toRightOf="@id/process_datetest"
+                android:text="at"
+                android:textAlignment="center"
+                android:textColor="@android:color/black"
+                android:textSize="14dp"
+                app:fontFamily="@font/lato" />
+
+            <TextView
+                android:id="@+id/process_timetest"
+                style="@style/layoutTheme"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/exerciseTitle2"
+                android:layout_centerHorizontal="false"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginRight="0dp"
+                android:layout_marginBottom="20dp"
+                android:layout_toRightOf="@id/process_at2"
+                android:maxLines="1"
+                android:textAlignment="center"
+                android:textColor="@color/colorPrimary"
+                android:textSize="14dp"
+                app:fontFamily="@font/lato" />
+
+            <TextView
+                android:id="@+id/process_expectation"
+                style="@style/layoutTheme"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/process_name"
+                android:layout_centerHorizontal="false"
+                android:layout_marginStart="80dp"
+                android:layout_marginLeft="80dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="20dp"
+                android:text="Your expectation is"
+                android:textAlignment="center"
+                android:textColor="@android:color/black"
+                android:textSize="14dp"
+                app:fontFamily="@font/lato" />
+
+            <TextView
+                android:id="@+id/process_expectation_input"
+                style="@style/layoutTheme"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/process_name"
+                android:layout_centerHorizontal="false"
+                android:layout_marginStart="0dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginRight="0dp"
+                android:layout_marginBottom="20dp"
+                android:layout_toRightOf="@id/process_expectation"
+                android:textAlignment="center"
+                android:textColor="@color/colorPrimary"
+                android:textSize="14dp"
+                android:textStyle="bold"
+                app:fontFamily="@font/lato" />
+
+            <TextView
+                android:id="@+id/activity_text"
+                style="@style/layoutTheme"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/process_expectation"
+                android:layout_centerHorizontal="false"
+                android:layout_marginStart="40dp"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="20dp"
+                android:text="Your next activity is available in"
+                android:textAlignment="center"
+                android:textColor="@android:color/black"
+                android:textSize="14dp"
+                app:fontFamily="@font/lato" />
+
+            <TextView
+                android:id="@+id/countdown"
+                style="@style/layoutTheme"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/process_expectation"
+                android:layout_centerHorizontal="false"
+                android:layout_marginStart="0dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="20dp"
+                android:layout_toRightOf="@id/activity_text"
+                android:text="xx:xx"
+                android:textAlignment="center"
+                android:textColor="@color/colorPrimary"
+                android:textSize="14dp"
+                app:fontFamily="@font/lato" />
+
+
+        </RelativeLayout>
+    </com.google.android.material.card.MaterialCardView>
+</RelativeLayout>

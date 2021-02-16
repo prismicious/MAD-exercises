@@ -49,43 +49,72 @@ public class MainActivity extends AppCompatActivity {
     public Button btn;
     SharedPreferences prefs;
     SharedPreferences.Editor editor;
+
     FirebaseDatabase database = FirebaseDatabase.getInstance();
     DatabaseReference ref2 = database.getReference().child("Users").child(FirebaseAuth.getInstance().getUid()).child("Activity");
+
     DatabaseReference ref3 = database.getReference().child("Test");
     DatabaseReference ref = database.getReference();
     int activitycount = 0;
     String sActivitycount = String.valueOf(activitycount);
     public String currentDateandTime;
+    Fragment selectedFragment = null;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
         prefs = getSharedPreferences("prefs", MODE_PRIVATE);
+        editor = prefs.edit();
+        editor.putInt("countdown", 1);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        selectedFragment = new DecatastrophizingFragment();
+        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, selectedFragment, selectedFragment.toString()).commit();
         BottomNavigationView bottomNav = findViewById(R.id.bottomNav);
         bottomNav.setOnNavigationItemSelectedListener(navListener);
-    }
+// ...
+        DatabaseReference rootRef = database.getReference().child("Users").child(FirebaseAuth.getInstance().getUid());
 
+        rootRef.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot snapshot) {
+                if (snapshot.hasChild("Process")) {
+                    Log.i("testxx", "Process found");
+                }
+                else {
+                    Log.i("testxx", "Process not found");
+                    startActivity(new Intent(MainActivity.this, Process.class));
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                Log.i("DatabaseError", error.toString());
+            }
+        });
+    }
     private BottomNavigationView.OnNavigationItemSelectedListener navListener =
             new BottomNavigationView.OnNavigationItemSelectedListener() {
                 @Override
                 public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                    Fragment selectedFragment = null;
+                    Fragment selectedFragment = new DecatastrophizingFragment();
 
                     switch (item.getItemId()){
-                        case R.id.nav_add:
-                            selectedFragment = new DecatastrophizingFragment();
+                      //  case R.id.nav_add:
+                       //     selectedFragment = new DecatastrophizingFragment();
 
-                            break;
+                        //    break;
                         case R.id.nav_test:
-                            selectedFragment = new AssignFragment();
+                            startActivity(new Intent(MainActivity.this, Dashboard.class));
+                          //  selectedFragment = new AssignFragment();
                             break;
                         case R.id.nav_test2:
-                            selectedFragment = new HomeFragment();
+                            startActivity(new Intent(MainActivity.this, homeActivity.class));
                             break;
+
+                            default:
+                                selectedFragment = new DecatastrophizingFragment();
                     }
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, selectedFragment, selectedFragment.toString()).commit();
 
@@ -146,7 +175,7 @@ public class MainActivity extends AppCompatActivity {
         Date currentTime = Calendar.getInstance().getTime();
         SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy - HH:mm:ss", Locale.getDefault());
         currentDateandTime = sdf.format(new Date());
-        Task task = new Task("Decatastrophizing Task", currentDateandTime, inputText1, inputText2, inputText3, inputText4);
+
       //  ref3.setValue(task);
         id = get.getInt("id", 0);
         editor.putInt("id",id+1);
@@ -154,7 +183,8 @@ public class MainActivity extends AppCompatActivity {
         while (!editor.commit()) {
            delay(100);
         }
-        Log.i("Increment", String.valueOf(get.getInt("id", 0)));
+
+        Task task = new Task("Decatastrophizing Task", currentDateandTime, inputText1, inputText2, inputText3, inputText4);
         ref2.child(String.valueOf(id)).setValue(task);
         startActivity(i);
 

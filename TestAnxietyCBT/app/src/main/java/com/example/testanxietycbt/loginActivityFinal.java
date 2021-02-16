@@ -62,6 +62,7 @@ public class loginActivityFinal extends AppCompatActivity implements View.OnClic
                 String password = userLoginPreferences.getString("password", "");
                 editTextEmail.setText(email);
                 editTextPassword.setText(password);
+                userLogin();
 
             }
         } else if (checkbox.equals("false")){
@@ -113,6 +114,7 @@ public class loginActivityFinal extends AppCompatActivity implements View.OnClic
             editor.putString("email", editTextEmail.getText().toString().trim());
             editor.putString("password", editTextPassword.getText().toString().trim());
             editor.apply();
+
         } else {
             editor.putString("email", "");
             editor.putString("password", "");
@@ -128,11 +130,6 @@ public class loginActivityFinal extends AppCompatActivity implements View.OnClic
             return;
         }
 
-       /* if(Patterns.EMAIL_ADDRESS.matcher(email).matches()){
-            editTextEmail.setError("Please enter a valid email.");
-            editTextEmail.requestFocus();
-            return;
-        } */
 
         if (password.isEmpty()){
             editTextPassword.setError("Password is required.");
@@ -153,7 +150,7 @@ public class loginActivityFinal extends AppCompatActivity implements View.OnClic
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if(task.isSuccessful()){
                     Toast.makeText(loginActivityFinal.this, "Login successful!", Toast.LENGTH_LONG).show();
-                    startActivity(new Intent(loginActivityFinal.this, Dashboard.class));
+                    startActivity(new Intent(loginActivityFinal.this, homeActivity.class));
                     progressBar.setVisibility(View.GONE);
                 }else{
                     Toast.makeText(loginActivityFinal.this, "Failed to login! Please check credentials.", Toast.LENGTH_LONG).show();

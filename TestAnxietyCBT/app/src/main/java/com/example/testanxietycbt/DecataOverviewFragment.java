@@ -19,9 +19,14 @@ public class DecataOverviewFragment extends AppCompatActivity {
 
     String Answer1, Answer2, Answer3, Answer4;
 
+    SharedPreferences prefs;
+    SharedPreferences.Editor editor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        prefs = getSharedPreferences("prefs", MODE_PRIVATE);
+        editor = prefs.edit();
+        editor.putInt("countdown", 1);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fragment_decata_overview);
         Log.i("Test ", "Test!?");
@@ -47,6 +52,6 @@ public class DecataOverviewFragment extends AppCompatActivity {
     }
 
     public void onClick(View v){
-        startActivity(new Intent(this, MainActivity.class));
+        startActivity(new Intent(this, Dashboard.class));
     }
 }

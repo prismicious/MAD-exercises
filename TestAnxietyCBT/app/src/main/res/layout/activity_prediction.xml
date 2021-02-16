@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="#E8E9F3"
+    tools:context=".PredictionActivity">
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:text="Make prediction"
+        android:textColor="@color/colorPrimary"
+        android:textSize="24dp"
+        android:textStyle="bold"
+        app:fontFamily="@font/lato"
+        />
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/predictionCard"
+        android:layout_width="340dp"
+        android:layout_height="420dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/title"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="2dp"
+        app:strokeWidth="8dp">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/subtitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:text="Describe the event or task"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:textColor="#000000"
+                android:layout_marginTop="20dp"
+                android:textSize="22sp"
+                app:fontFamily="@font/lato" />
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textField_prediction1"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_below="@id/subtitle"
+            android:layout_centerHorizontal="true"
+            android:hint="The test"
+            app:hintTextColor="#d9d9d9">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textColorHint="#00111111" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:id="@+id/predictedexperiencetext"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:text="Predicted experience"
+                android:textColor="#000000"
+                android:textSize="22sp"
+                android:layout_below="@id/textField_prediction1" />
+
+            <com.google.android.material.chip.ChipGroup
+                android:id="@+id/chipGroup"
+                android:layout_below="@id/predictedexperiencetext"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:singleLine="true"
+                app:chipSpacingHorizontal="4dp"
+                android:layout_marginLeft="20dp"
+                app:singleSelection="true"
+                app:checkedChip="@+id/chipGood"
+                >
+            <com.google.android.material.chip.Chip
+                style="@style/Widget.MaterialComponents.Chip.Choice"
+                android:id="@+id/chipGood"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:text="Good"
+                android:textAlignment="center"
+                />
+
+            <com.google.android.material.chip.Chip
+                style="@style/Widget.MaterialComponents.Chip.Choice"
+            android:id="@+id/chipOK"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:text="OK"
+            android:textAlignment="center"
+            />
+
+            <com.google.android.material.chip.Chip
+                style="@style/Widget.MaterialComponents.Chip.Choice"
+                android:id="@+id/chipPoor"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:text="Poor"
+                android:textAlignment="center"
+                 />
+            </com.google.android.material.chip.ChipGroup>
+            <TextView
+                android:id="@+id/tasktext"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_below="@id/chipGroup"
+                android:textSize="18sp"
+                android:text="When is it the event taking place?"
+                android:textColor="#000000" />
+            
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/dateButton"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tasktext"
+                android:text="Add specific date"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                />
+
+            <TextView
+                android:id="@+id/remindertext"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:text="Add reminder?"
+                android:textColor="#000000"
+                android:layout_below="@id/dateButton"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                />
+
+            <com.google.android.material.checkbox.MaterialCheckBox
+                android:id="@+id/reminderCheckbox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/dateButton"
+                android:layout_toRightOf="@id/remindertext" />
+
+        </RelativeLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/nextButton1"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="Submit"
+        app:cornerRadius="8dp"
+        android:layout_below="@+id/predictionCard"
+        android:layout_centerHorizontal="true"
+        />
+
+
+
+</RelativeLayout>

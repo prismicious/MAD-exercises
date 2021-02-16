@@ -2,6 +2,8 @@ package com.example.testanxietycbt;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
@@ -11,6 +13,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.material.chip.Chip;
+import com.google.android.material.chip.ChipGroup;
 import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
@@ -23,6 +27,8 @@ import com.google.android.material.datepicker.MaterialPickerOnPositiveButtonClic
 
 import java.util.Calendar;
 
+import static bolts.Task.delay;
+
 public class Process extends AppCompatActivity implements DatePickerDialog.OnDateSetListener, TimePickerDialog.OnTimeSetListener {
 
     Button button, button2;
@@ -34,11 +40,17 @@ public class Process extends AppCompatActivity implements DatePickerDialog.OnDat
     int Year, Month, Day ;
     FirebaseDatabase database = FirebaseDatabase.getInstance();
     String descString, nameString, timeString, dateString;
-
+    Chip goodChip, okChip, poorChip;
+    ChipGroup chipGroup;
+    String selectedChip = "good";
+    SharedPreferences prefs;
+    SharedPreferences.Editor editor;
+    int countDownStarted = 0;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        prefs = getSharedPreferences("prefs", MODE_PRIVATE);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_process);
         name = findViewById(R.id.name);
@@ -49,6 +61,29 @@ public class Process extends AppCompatActivity implements DatePickerDialog.OnDat
         Month = calendar.get(Calendar.MONTH);
         Log.i("Date", String.valueOf(Month));
         Day = calendar.get(Calendar.DAY_OF_MONTH);
+
+        goodChip = findViewById(R.id.chipGood);
+        okChip = findViewById(R.id.chipOK);
+        poorChip = findViewById(R.id.chipPoor);
+        Log.i("TestChip", String.valueOf(goodChip.getId()));
+        chipGroup = findViewById(R.id.chipGroup);
+        chipGroup.setOnCheckedChangeListener(new ChipGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(ChipGroup group, int checkedId) {
+                if (checkedId == goodChip.getId()){
+                    selectedChip = "good";
+                }
+                if (checkedId == okChip.getId()){
+                    selectedChip = "ok";
+                }
+
+                if (checkedId == poorChip.getId()){
+                    selectedChip = "poor";
+                }
+                Log.i("selectedChip", selectedChip);
+            }
+        });
+
 
         final MaterialDatePicker.Builder materialDateBuilder = MaterialDatePicker.Builder.datePicker();
         materialDateBuilder.setTitleText("Select date");
@@ -74,16 +109,6 @@ public class Process extends AppCompatActivity implements DatePickerDialog.OnDat
 
                 materialDatePicker.show(getSupportFragmentManager(), "MATERIAL_DATE_PICKER");
 
-                /*datePickerDialog = DatePickerDialog.newInstance(Process.this, Year, Month, Day);
-                datePickerDialog.setThemeDark(false);
-
-                datePickerDialog.showYearPickerFirst(false);
-
-                datePickerDialog.setAccentColor(Color.parseColor("#0072BA"));
-
-                datePickerDialog.setTitle("Select Date ");
-
-                datePickerDialog.show(getFragmentManager(), "DatePickerDialog"); */
 
             }
         });
@@ -130,21 +155,26 @@ public class Process extends AppCompatActivity implements DatePickerDialog.OnDat
                     return;
                 }
 
-                Toast.makeText(Process.this, "Process created succesfully!", Toast.LENGTH_SHORT).show();
-                
+                Toast.makeText(Process.this, "Exam scheduled succesfully!", Toast.LENGTH_SHORT).show();
+
                     nameString = name.getEditText().getText().toString();
                     descString = desc.getEditText().getText().toString();
                     timeString = dialog_bt_time.getText().toString();
                     dateString = dialog_bt_date.getText().toString();
 
-                    ProcessModel thisProcess = new ProcessModel(nameString, descString, timeString, dateString);
+                    ProcessModel thisProcess = new ProcessModel(nameString, descString, timeString, dateString, selectedChip);
                     DatabaseReference ref = database.getReference().child("Users").child(FirebaseAuth.getInstance().getUid()).child("Process");
                     ref.setValue(thisProcess);
+                    countDownStarted = 1;
 
                 Log.i("Process", "Name: " + nameString + " desc: " + descString + " time: " +timeString + " date: " + dateString);
-
+                startActivity(new Intent(Process.this, homeActivity.class));
+                SharedPreferences get = getSharedPreferences("prefs", MODE_PRIVATE);
+                editor = prefs.edit();
+                editor.putInt("countdown", countDownStarted);
             }
         });
+
 
     }
 
@@ -190,5 +220,15 @@ public class Process extends AppCompatActivity implements DatePickerDialog.OnDat
         timeButton.setText(time);
         timeButton.setHint(time);
         Toast.makeText(Process.this, time, Toast.LENGTH_LONG).show();
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        Log.i("Hello", "Starting service");
+
+
+            startService(new Intent(this, NotificationService.class));
+
     }
 }

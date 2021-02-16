@@ -3,18 +3,22 @@ package com.example.testanxietycbt;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
+import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -38,9 +42,36 @@ public class Dashboard extends AppCompatActivity {
         itemList = findViewById(R.id.item_list);
         itemList.setHasFixedSize(true);
         itemList.setLayoutManager(new LinearLayoutManager(this));
-
-
+        BottomNavigationView bottomNav = findViewById(R.id.bottom_navigation2);
+        bottomNav.setOnNavigationItemSelectedListener(navListener);
     }
+
+    private BottomNavigationView.OnNavigationItemSelectedListener navListener =
+            new BottomNavigationView.OnNavigationItemSelectedListener() {
+                @Override
+                public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                    Fragment selectedFragment = null;
+
+                    switch (item.getItemId()){
+                        //case R.id.nav_add:
+                        //    startActivity(new Intent(Dashboard.this, MainActivity.class));
+
+                        case R.id.nav_test:
+                            startActivity(new Intent(Dashboard.this, Dashboard.class));
+                            //  selectedFragment = new AssignFragment();
+                            break;
+                        case R.id.nav_test2:
+                            startActivity(new Intent(Dashboard.this, homeActivity.class));
+                           // selectedFragment = new HomeFragment();
+                            break;
+
+                        default:
+                          //  selectedFragment = new DecatastrophizingFragment();
+                    }
+
+                    return true;
+                }
+            };
 
     @Override
     protected void onStart() {
@@ -60,6 +91,16 @@ public class Dashboard extends AppCompatActivity {
                         question3 = getResources().getString(R.string.decata3);
                         question4 = getResources().getString(R.string.decata4);
                         holder.setQuestion(question1,question2,question3,question4);
+                    }
+
+                    if(model.TaskName.equals("Prediction Activity"))
+                    {
+                        String predictionInput1, predictionInput2, predictionInput3, predictionInput4;
+                                predictionInput1 = "Event";
+                                predictionInput2 = "Expectation";
+                                predictionInput3 = "Time";
+                                predictionInput4 = "Reminder";
+                                holder.setQuestion(predictionInput1, predictionInput2, predictionInput3, predictionInput4);
                     }
 
                     holder.expandableCard.setVisibility(isExpanded?View.VISIBLE:View.GONE);

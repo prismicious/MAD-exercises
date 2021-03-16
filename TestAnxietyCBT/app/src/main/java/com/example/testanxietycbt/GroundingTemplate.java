@@ -43,7 +43,6 @@ public class GroundingTemplate extends AppCompatActivity {
         int upper_bound = 1;
         final int exerciseNumber = rand.nextInt(upper_bound);
         exerciseButton.setEnabled(false);
-        exerciseButton.setTextColor(Color.BLACK);
         new CountDownTimer(30000, 1000) {
 
             public void onTick(long millisUntilFinished) {
@@ -53,12 +52,9 @@ public class GroundingTemplate extends AppCompatActivity {
 
             public void onFinish() {
                 progressBar.setVisibility(View.GONE);
-                Context contextInstance = getApplicationContext();
                 exerciseButton.setTextSize(12);
                 exerciseButton.setText("Continue");
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                    exerciseButton.setBackgroundTintList(contextInstance.getResources().getColorStateList(R.color.colorPrimary));
-                }
+
                 exerciseButton.setEnabled(true);
             }
         }.start();

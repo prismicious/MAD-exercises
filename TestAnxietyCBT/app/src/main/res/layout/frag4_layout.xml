@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#E8E9F3"
+    tools:context=".IntroductionTest">
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNav"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="?android:attr/windowBackground"
+        app:menu="@menu/bottom_navigation" />
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/exerciseCard"
+        android:layout_width="340dp"
+        android:layout_height="500dp"
+        android:layout_centerInParent="false"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="false"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="2dp"
+        app:strokeWidth="8dp">
+
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/exerciseTitle15"
+                style="@style/layoutTheme"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginStart="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="10dp"
+                android:text="So now that we understand a little bit about CBT, what's next?"
+                android:textColor="@android:color/black"
+                android:textSize="18dp"
+                app:fontFamily="@font/lato"
+                android:textAlignment="center"
+                />
+
+            <TextView
+                android:id="@+id/exerciseTitle13"
+                style="@style/layoutTheme"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/exerciseTitle15"
+                android:layout_centerHorizontal="true"
+                android:layout_marginStart="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="10dp"
+                android:text="Now it is time to schedule your upcoming exam that you are anxious for. You will then choose when you are interested in completing activities. \n One activity will be available every 24 hours, and it is up to you decide when you would like to complete it."
+                android:textColor="@android:color/black"
+                android:textSize="12dp"
+                app:fontFamily="@font/lato"
+
+                />
+
+            <ImageView
+                android:id="@+id/img4"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_below="@id/exerciseTitle13"
+                android:layout_marginTop="0dp"
+                android:layout_marginBottom="10dp"
+                android:src="@drawable/ic_undraw_in_progress_ql66"
+               />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/scheduleButton"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/img4"
+                android:layout_centerHorizontal="true"
+                android:layout_marginStart="50dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="50dp"
+                android:layout_marginRight="0dp"
+                android:layout_marginBottom="0dp"
+                android:onClick="onClick"
+                android:text="SCHEDULE EXAM"
+                app:cornerRadius="4dp" />
+        </RelativeLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+</RelativeLayout>

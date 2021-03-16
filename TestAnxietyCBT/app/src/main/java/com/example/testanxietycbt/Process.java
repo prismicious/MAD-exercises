@@ -24,6 +24,7 @@ import com.wdullaer.materialdatetimepicker.time.RadialPickerLayout;
 import com.wdullaer.materialdatetimepicker.time.TimePickerDialog;
 import com.google.android.material.datepicker.MaterialDatePicker;
 import com.google.android.material.datepicker.MaterialPickerOnPositiveButtonClickListener;
+import com.wdullaer.materialdatetimepicker.time.Timepoint;
 
 import java.util.Calendar;
 
@@ -54,7 +55,6 @@ public class Process extends AppCompatActivity implements DatePickerDialog.OnDat
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_process);
         name = findViewById(R.id.name);
-        desc = findViewById(R.id.desc);
         calendar = Calendar.getInstance();
 
         Year = calendar.get(Calendar.YEAR) ;
@@ -96,6 +96,11 @@ public class Process extends AppCompatActivity implements DatePickerDialog.OnDat
             public void onClick(View v) {
                 Calendar now = Calendar.getInstance();
                 TimePickerDialog timePickerDialog = TimePickerDialog.newInstance(Process.this, now.get(Calendar.HOUR_OF_DAY), now.get(Calendar.MINUTE), true);
+                timePickerDialog.setAccentColor("#AF4448");
+                int currentHour = now.get(Calendar.HOUR);
+                int currentMin = now.get(Calendar.MINUTE);
+                int currentSecond = now.get(Calendar.SECOND);
+                timePickerDialog.setMinTime(new Timepoint(currentHour,currentMin, currentSecond));
                 timePickerDialog.setTitle("Set the time");
                 timePickerDialog.show(getFragmentManager(),"");
             }
@@ -106,7 +111,7 @@ public class Process extends AppCompatActivity implements DatePickerDialog.OnDat
         dialog_bt_date.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                datePickerDialog.setMinDate(Calendar.getInstance());
                 materialDatePicker.show(getSupportFragmentManager(), "MATERIAL_DATE_PICKER");
 
 
@@ -129,7 +134,6 @@ public class Process extends AppCompatActivity implements DatePickerDialog.OnDat
             public void onClick(View v) {
 
                 TextInputLayout name = findViewById(R.id.name);
-                TextInputLayout desc = findViewById(R.id.desc);
                 String nameCheck = name.getEditText().getText().toString().trim();
                 String descCheck = name.getEditText().getText().toString().trim();
 

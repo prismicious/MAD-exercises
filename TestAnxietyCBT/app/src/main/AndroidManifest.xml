@@ -12,7 +12,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".homeActivity"></activity>
+        <activity
+            android:name=".IntroductionTest"
+            android:label="@string/title_activity_introduction_test"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity android:name=".Introduction" />
+        <activity android:name=".homeActivity" />
         <activity android:name=".PredictionActivity" />
         <activity android:name=".Dashboard" />
         <activity android:name=".GroundingTemplate" />

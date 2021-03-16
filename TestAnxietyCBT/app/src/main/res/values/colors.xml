@@ -4,6 +4,6 @@
     <color name="colorPrimaryDark">#AF4448</color>
     <color name="colorPrimaryLight">#FFA4A2</color>
     <color name="colorSecondary">#c5cae9</color>
-    <color name="colorAccent">#D81B60</color>
+    <color name="colorAccent">#AF4448</color>
     <color name="disabledcolor">#35558D</color>
 </resources>

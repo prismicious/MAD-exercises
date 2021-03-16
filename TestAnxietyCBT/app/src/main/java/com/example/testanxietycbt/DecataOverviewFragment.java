@@ -35,6 +35,9 @@ public class DecataOverviewFragment extends AppCompatActivity {
 
     public void GetDataAndAssignText(){
         SharedPreferences prefs = getSharedPreferences("prefs", MODE_WORLD_READABLE);
+        int activityScheduled = 0;
+        SharedPreferences.Editor editor = prefs.edit();
+        editor.putInt("activityScheduled", activityScheduled);
         Answer1 = prefs.getString("Answer1", "");
         Answer2 = prefs.getString("Answer2", "");
         Answer3 = prefs.getString("Answer3", "");

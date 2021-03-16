@@ -8,7 +8,7 @@
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/decataCard1"
         android:layout_width="340dp"
-        android:layout_height="400dp"
+        android:layout_height="450dp"
         android:layout_centerInParent="true"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
@@ -30,8 +30,8 @@
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="10dp"
-                android:text="Scenario: Decatastrophizing"
-                android:textColor="#272635"
+                android:text="Question 1"
+                android:textColor="@color/colorPrimary"
                 android:textSize="24dp"
                 android:textStyle="bold"
                 app:fontFamily="@font/lato" />
@@ -41,8 +41,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/title"
-                android:layout_centerInParent="true"
-                android:layout_marginTop="10dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:textAlignment="center"
+                android:layout_marginTop="5dp"
                 android:text="@string/decata1"
                 android:textColor="#272635"
                 android:textSize="16dp"
@@ -54,42 +57,43 @@
                 android:layout_height="200dp"
                 android:layout_below="@id/subtitle"
                 android:layout_centerInParent="true"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="10dp"
                 android:src="@drawable/ic_undraw_in_thought_gjsf" />
 
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/textField_decata1"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
-                android:layout_width="300dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/img"
                 android:layout_centerHorizontal="true"
 
+                android:layout_marginTop="300dp"
                 android:hint="I could fail the test"
                 app:hintTextColor="#d9d9d9">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/decata1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                     android:textColorHint="#00111111" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
+
             <com.google.android.material.button.MaterialButton
-                android:id="@+id/nextButton1"
-                android:layout_width="100dp"
-                android:layout_height="50dp"
-                android:layout_below="@+id/textField_decata1"
+                android:id="@+id/exerciseButton"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
-                android:background="@color/colorPrimary"
+                android:layout_marginTop="400dp"
                 android:onClick="onClick_decata1"
-                android:text="Next"
-                android:textStyle="bold"
-                android:typeface="normal"
-                app:backgroundTint="@color/colorPrimary"
-                app:cornerRadius="4dp" />
+                android:text="Continue"
+
+                app:icon="@drawable/ic_chevron_right_black_24dp" />
 
         </RelativeLayout>
     </com.google.android.material.card.MaterialCardView>
@@ -98,6 +102,8 @@
         android:layout_height="wrap_content"
         app:spb_currentStateNumber="one"
         android:layout_below="@id/decataCard1"
-        app:spb_maxStateNumber="four"/>
+        app:spb_maxStateNumber="four"
+        app:spb_stateForegroundColor="@color/colorPrimary"
+        />
 
 </RelativeLayout>

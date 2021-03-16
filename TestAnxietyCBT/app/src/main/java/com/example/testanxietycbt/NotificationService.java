@@ -16,7 +16,15 @@ import android.os.Handler;
 import android.os.IBinder;
 import android.util.Log;
 
+import androidx.annotation.NonNull;
 import androidx.core.app.NotificationCompat;
+
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.Timer;
 import java.util.TimerTask;
@@ -27,7 +35,9 @@ public class NotificationService extends Service {
     CountDownTimer timer2;
     TimerTask timerTask;
     String TAG = "Timers";
-    static int Your_X_SECS = 5;
+    FirebaseDatabase database;
+    DatabaseReference rootRef;
+    int Your_X_SECS = 99999;
     int count = 0;
     NotificationChannel channel;
     SharedPreferences prefs;
@@ -44,7 +54,27 @@ public class NotificationService extends Service {
         Log.e(TAG, "onStartCommand");
         super.onStartCommand(intent, flags, startId);
 
-        startTimer();
+        database = FirebaseDatabase.getInstance();
+        rootRef = database.getReference().child("Users").child(FirebaseAuth.getInstance().getUid()).child("NextActivity");
+
+        rootRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                ExerciseSchedule exerciseSchedule = snapshot.getValue(ExerciseSchedule.class);
+                snapshot.getValue(ExerciseSchedule.class);
+                Your_X_SECS = (int)exerciseSchedule.SecondsTillExercise;
+                Log.i("NotiTest", "Notification Test => Pinging in " + Your_X_SECS + " seconds");
+
+                if (Your_X_SECS > 0)
+                startTimer();
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
 
         return START_STICKY;
     }
@@ -90,8 +120,8 @@ public class NotificationService extends Service {
         //schedule the timer, after the first 5000ms the TimerTask will run every 10000ms
 
 
-
-        timer.schedule(timerTask, 5000, Your_X_SECS * 1000); //
+        Log.i("YOUR_X_SECS", String.valueOf(Your_X_SECS));
+        timer.schedule(timerTask, Your_X_SECS * 1000, Your_X_SECS * 1000); //
         //timer.schedule(timerTask, 5000,1000); //
     }
 
@@ -111,11 +141,8 @@ public class NotificationService extends Service {
                 //use a handler to run a toast that shows the current timestamp
                 handler.post(new Runnable() {
                     public void run() {
-                        Log.i("Hello", "Hello");
+
                         //TODO CALL NOTIFICATION FUNC
-                        //createNotificationChannel();
-                        count++;
-                        if (count <= 3)
                         Notificationtest();
 
                     }
@@ -123,6 +150,7 @@ public class NotificationService extends Service {
             }
         };
     }
+
 
 
 
@@ -157,7 +185,7 @@ public class NotificationService extends Service {
                 .setContentTitle("Test Anxiety CBT")
                 .setContentText("An activity is ready to be completed!")
                 .setPriority(NotificationCompat.PRIORITY_DEFAULT);
-        Intent resultIntent = new Intent(this, MainActivity.class);
+        Intent resultIntent = new Intent(this, GroundingTemplate.class);
         TaskStackBuilder stackBuilder = TaskStackBuilder.create(this);
         stackBuilder.addParentStack(Process.class);
 

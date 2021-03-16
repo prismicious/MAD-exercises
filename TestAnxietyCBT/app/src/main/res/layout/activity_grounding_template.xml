@@ -97,29 +97,19 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/exercise"
                 android:layout_centerInParent="true"
-                android:layout_marginBottom="10dp"
+                android:layout_marginBottom="0dp"
                 android:visibility="visible" />
 
-            <com.google.android.material.button.MaterialButton
 
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/exerciseButton"
-                android:layout_width="100dp"
-                android:layout_height="50dp"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
                 android:layout_below="@id/exerciseProgressBar"
                 android:layout_centerHorizontal="true"
-                android:layout_marginBottom="20dp"
-                android:background="#666666"
-                android:clickable="false"
-                android:text="Next"
-                android:textColor="@android:color/black"
-                android:textStyle="bold"
-                android:typeface="normal"
-                app:backgroundTint="#D1D1D1"
-                app:cornerRadius="20dp"
-                app:icon="@drawable/ic_chevron_right_black_24dp"
-                android:textAlignment="center"
-                style="@style/Widget.MaterialComponents.Button.TextButton.Icon"/>
 
+                android:layout_marginBottom="10dp"
+                app:icon="@drawable/ic_chevron_right_black_24dp" />
 
 
         </RelativeLayout>

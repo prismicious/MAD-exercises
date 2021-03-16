@@ -7,4 +7,15 @@
     <string name="decata4">What is a more likely outcome, given what you know?</string>
     <string name="facebook_app_id">396697304905119</string>
     <string name="fb_login_protocol_scheme">fb396697304905119</string>
+    <string name="title_activity_introduction_test">IntroductionTest</string>
+    <string name="tab_text_1"></string>
+    <string name="tab_text_2"></string>
+    <string name="tab_text_3"></string>
+
+    <integer-array name="img_id_arr">
+        <item>@drawable/t_selector</item>
+        <item>@drawable/t_selector</item>
+        <item>@drawable/t_selector</item>
+        <item>@drawable/t_selector</item>
+    </integer-array>
 </resources>

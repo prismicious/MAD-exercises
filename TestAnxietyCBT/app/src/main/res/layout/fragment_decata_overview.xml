@@ -7,19 +7,20 @@
     <RelativeLayout
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
-    <TextView
-        android:id="@+id/title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="false"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="false"
-        android:layout_marginTop="10dp"
-        android:text="Activity overview"
-        android:textColor="#272635"
-        android:textSize="24dp"
-        android:textStyle="bold"
-        app:fontFamily="@font/lato" />
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="false"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="false"
+            android:layout_marginTop="10dp"
+            android:text="Activity overview"
+            android:textColor="@color/colorPrimary"
+            android:textSize="24dp"
+            android:textStyle="bold"
+            app:fontFamily="@font/lato" />
 
 
     <com.google.android.material.card.MaterialCardView
@@ -36,32 +37,47 @@
         app:cardCornerRadius="12dp"
         app:cardElevation="2dp"
         app:strokeWidth="8dp">
-    <RelativeLayout
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
 
-        <TextView
-            android:id="@+id/text1"
-            style="@style/layoutTheme"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="false"
-            android:layout_marginTop="20dp"
-            android:fontFamily="@font/lato"
-            android:text="@string/decata1"
-            android:paddingLeft="20dp"/>
-        <TextView
-            style="@style/overviewText"
-            android:id="@+id/input1"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_below="@id/text1"
-            android:paddingLeft="20dp"
-            android:layout_marginTop="10dp"
-            android:layout_gravity="center_horizontal"
-            android:fontFamily="@font/lato"
-            android:text="Test" />
-    </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="274dp"
+            android:layout_height="132dp">
+
+            <TextView
+                android:id="@+id/question1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:text="Q1"
+                android:textColor="@color/colorPrimary"
+                android:textStyle="bold"
+                />
+
+            <TextView
+                android:id="@+id/text1"
+                style="@style/layoutTheme"
+                android:layout_below="@id/question1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="false"
+                android:layout_marginTop="0dp"
+                android:fontFamily="@font/lato"
+                android:paddingLeft="20dp"
+                android:text="@string/decata1" />
+
+            <TextView
+                android:id="@+id/input1"
+                style="@style/overviewText"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@id/text1"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/lato"
+                android:paddingLeft="20dp"
+                android:text="Test" />
+        </RelativeLayout>
     </com.google.android.material.card.MaterialCardView>
 
     <ImageView
@@ -111,16 +127,29 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
-        <TextView
-            android:id="@+id/text2"
-            style="@style/layoutTheme"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="false"
-            android:layout_marginTop="20dp"
-            android:fontFamily="@font/lato"
-            android:text="@string/decata2"
-            android:paddingLeft="20dp"/>
+
+            <TextView
+                android:id="@+id/question2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:text="Q2"
+                android:textColor="@color/colorPrimary"
+                android:textStyle="bold"
+                />
+            <TextView
+                android:id="@+id/text2"
+                style="@style/layoutTheme"
+                android:layout_below="@id/question2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="false"
+                android:layout_marginTop="0dp"
+                android:fontFamily="@font/lato"
+                android:paddingLeft="20dp"
+                android:text="@string/decata2" />
         <TextView
             style="@style/overviewText"
             android:id="@+id/input2"
@@ -153,15 +182,27 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
             <TextView
+                android:id="@+id/question3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:text="Q3"
+                android:textColor="@color/colorPrimary"
+                android:textStyle="bold"
+                />
+            <TextView
                 android:id="@+id/text3"
                 style="@style/layoutTheme"
+                android:layout_below="@id/question3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="false"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="0dp"
                 android:fontFamily="@font/lato"
-                android:text="@string/decata3"
-                android:paddingLeft="20dp"/>
+                android:paddingLeft="20dp"
+                android:text="@string/decata3" />
 
             <TextView
                 style="@style/overviewText"
@@ -195,15 +236,27 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
             <TextView
+                android:id="@+id/question4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:text="Q4"
+                android:textColor="@color/colorPrimary"
+                android:textStyle="bold"
+                />
+            <TextView
                 android:id="@+id/text4"
                 style="@style/layoutTheme"
+                android:layout_below="@id/question4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="false"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="0dp"
                 android:fontFamily="@font/lato"
-                android:text="@string/decata4"
-                android:paddingLeft="20dp"/>
+                android:paddingLeft="20dp"
+                android:text="@string/decata4" />
             <TextView
                 style="@style/overviewText"
                 android:id="@+id/input4"
@@ -219,16 +272,12 @@
     </com.google.android.material.card.MaterialCardView>
 
         <com.google.android.material.button.MaterialButton
-            android:layout_width="100dp"
-            android:layout_height="50dp"
-            android:layout_below="@+id/Card4"
-            android:layout_centerInParent="true"
-            android:background="@color/colorPrimary"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/Card4"
+            android:layout_centerHorizontal="true"
             android:onClick="onClick"
-            android:text="Next"
-            android:textStyle="bold"
-            android:typeface="normal"
-            app:backgroundTint="@color/colorPrimary"
-            app:cornerRadius="8dp" />
+            android:text="SUBMIT" />
+
 </RelativeLayout>
 </ScrollView>

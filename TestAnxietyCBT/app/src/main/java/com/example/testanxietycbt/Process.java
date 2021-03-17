@@ -27,6 +27,7 @@ import com.google.android.material.datepicker.MaterialPickerOnPositiveButtonClic
 import com.wdullaer.materialdatetimepicker.time.Timepoint;
 
 import java.util.Calendar;
+import java.util.Date;
 
 import static bolts.Task.delay;
 
@@ -47,6 +48,7 @@ public class Process extends AppCompatActivity implements DatePickerDialog.OnDat
     SharedPreferences prefs;
     SharedPreferences.Editor editor;
     int countDownStarted = 0;
+    public static boolean firstExercise = false;
 
 
     @Override
@@ -111,7 +113,7 @@ public class Process extends AppCompatActivity implements DatePickerDialog.OnDat
         dialog_bt_date.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                datePickerDialog.setMinDate(Calendar.getInstance());
+               //datePickerDialog.setMinDate(now);
                 materialDatePicker.show(getSupportFragmentManager(), "MATERIAL_DATE_PICKER");
 
 
@@ -160,14 +162,14 @@ public class Process extends AppCompatActivity implements DatePickerDialog.OnDat
                 }
 
                 Toast.makeText(Process.this, "Exam scheduled succesfully!", Toast.LENGTH_SHORT).show();
-
                     nameString = name.getEditText().getText().toString();
-                    descString = desc.getEditText().getText().toString();
+                    descString = "";
                     timeString = dialog_bt_time.getText().toString();
                     dateString = dialog_bt_date.getText().toString();
 
                     ProcessModel thisProcess = new ProcessModel(nameString, descString, timeString, dateString, selectedChip);
                     DatabaseReference ref = database.getReference().child("Users").child(FirebaseAuth.getInstance().getUid()).child("Process");
+                    firstExercise = true;
                     ref.setValue(thisProcess);
                     countDownStarted = 1;
 

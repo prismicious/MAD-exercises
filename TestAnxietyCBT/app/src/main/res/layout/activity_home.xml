@@ -269,7 +269,7 @@
                 android:layout_below="@+id/countdown"
                 android:layout_centerHorizontal="true"
                 android:text="Schedule Exercise"
-                android:visibility="invisible" />
+                android:visibility="visible" />
 
             <Button
                 android:id="@+id/reschedulebutton"

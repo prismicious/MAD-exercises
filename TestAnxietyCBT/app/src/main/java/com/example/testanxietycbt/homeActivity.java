@@ -58,11 +58,14 @@ public class homeActivity extends AppCompatActivity implements DatePickerDialog.
     private int delay = 1000;
     String accentColor = "#AF4448";
     public long differenceInSeconds;
+    private boolean firstActivity = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
+
+
         setContentView(R.layout.activity_home);
         BottomNavigationView bottomNav = findViewById(R.id.bottomNav);
         bottomNav.setOnNavigationItemSelectedListener(navListener);
@@ -82,7 +85,7 @@ public class homeActivity extends AppCompatActivity implements DatePickerDialog.
                 }
                 else {
                     Log.i("testxx", "Process not found");
-                //    startActivity(new Intent(homeActivity.this, IntroductionTest.class));
+                    startActivity(new Intent(homeActivity.this, IntroductionTest.class));
                 }
 
                 if (snapshot.hasChild("NextActivity")){
@@ -322,9 +325,10 @@ public class homeActivity extends AppCompatActivity implements DatePickerDialog.
                     stringDate = sdf.parse(dateAndTime);
                     Log.i("DateTest", "Stringdate " + stringDate);
                     Button exerciseButton = findViewById(R.id.startExercise);
-                    if (getCurrentDateTime.compareTo(dateAndTime) >= 0){
+                    if (getCurrentDateTime.compareTo(dateAndTime) >= 0 || firstActivity == false){
                         Log.i("DateTest", "Time surpassed.");
                         exerciseButton.setVisibility(View.VISIBLE);
+                        firstActivity = true;
 
                     }
                     else {

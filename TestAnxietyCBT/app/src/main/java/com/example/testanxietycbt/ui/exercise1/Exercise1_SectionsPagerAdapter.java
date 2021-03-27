@@ -8,11 +8,14 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 
-import com.example.testanxietycbt.Frag1;
 import com.example.testanxietycbt.Frag2;
 import com.example.testanxietycbt.Frag3;
 import com.example.testanxietycbt.Frag4;
+import com.example.testanxietycbt.ui.exercise1.fragments.Frag5;
 import com.example.testanxietycbt.R;
+import com.example.testanxietycbt.ui.exercise1.fragments.Frag6;
+import com.example.testanxietycbt.ui.exercise1.fragments.Frag7;
+import com.example.testanxietycbt.ui.exercise1.fragments.Frag8;
 
 /**
  * A [FragmentPagerAdapter] that returns a fragment corresponding to
@@ -35,17 +38,16 @@ public class Exercise1_SectionsPagerAdapter extends FragmentPagerAdapter {
 
        switch (position){
            case 0:
-               fragment = new Frag1();
+               fragment = new Frag5();
                break;
            case 1:
-               fragment = new Frag2();
+               fragment = new Frag6();
                break;
            case 2:
-               fragment = new Frag3();
+               fragment = new Frag7();
                break;
            case 3:
-               fragment = new Frag4();
-               break;
+               fragment = new Frag8();
        }
        return fragment;
     }

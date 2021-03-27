@@ -103,7 +103,7 @@ public class homeActivity extends AppCompatActivity implements DatePickerDialog.
                 if (snapshot.hasChild("Process")) {
                     Log.i("testxx", "Process found");
 
-                    startActivity(new Intent(homeActivity.this, Exercise_StudyTips.class));
+                   // startActivity(new Intent(homeActivity.this, MainActivity.class));
                 }
                 else {
                     Log.i("testxx", "Process not found");

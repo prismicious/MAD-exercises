@@ -109,13 +109,20 @@ public class Dashboard extends AppCompatActivity {
                     holder.setMainText(model.TimeTaskCompleted);
                     holder.setAnswers(model.input1, model.input2, model.input3, model.input4);
 
-                    holder.itemView.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View v) {
-                            mExpandedPosition = isExpanded ? -1:position;
-                            notifyItemChanged(position);
-                        }
-                    });
+                    if(model.TaskName.equals("Study tips task")){
+                        holder.setQuestion("","","","");
+                        holder.setAnswers("","","","");
+                    }
+                    else {
+
+                        holder.itemView.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+                                mExpandedPosition = isExpanded ? -1 : position;
+                                notifyItemChanged(position);
+                            }
+                        });
+                    }
 
             }
 

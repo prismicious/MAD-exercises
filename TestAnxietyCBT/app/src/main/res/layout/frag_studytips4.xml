@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#E8E9F3"
+    tools:context=".Exercise_StudyTips">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/exerciseCard"
+        android:layout_width="match_parent"
+        android:layout_height="500dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="2dp"
+        app:strokeWidth="8dp">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/exerciseTitle15"
+                style="@style/layoutTheme"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginStart="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="140dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="10dp"
+                android:drawableRight="@drawable/ic_iconmonstr_idea_1"
+                android:text="Tips for studying "
+                android:textAlignment="center"
+                android:textColor="@android:color/black"
+                android:textSize="18dp"
+                app:fontFamily="@font/lato" />
+
+            <TextView
+                android:id="@+id/tipTitle"
+                style="@style/layoutTheme"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/exerciseTitle15"
+                android:layout_centerHorizontal="true"
+                android:layout_marginStart="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="0dp"
+                android:text="I hope these tips can help you get better at studying"
+                android:textColor="@android:color/black"
+                android:textSize="14dp"
+                android:textStyle="bold"
+
+                app:fontFamily="@font/lato" />
+
+            <TextView
+                android:id="@+id/tipSubtitle"
+                style="@style/layoutTheme"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tipTitle"
+                android:layout_centerHorizontal="true"
+                android:layout_marginStart="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="0dp"
+                android:text="Did you learn something new?\nBeing well prepared for exams will boost your confidence and lessen test anxiety."
+                android:textColor="@android:color/black"
+                android:textSize="14dp"
+                app:fontFamily="@font/lato"
+
+                />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/scheduleButton2"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/radiogroup"
+                android:layout_marginStart="50dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="50dp"
+                android:layout_marginRight="0dp"
+                android:layout_marginBottom="0dp"
+                android:onClick="onClick"
+                android:text="SUBMIT"
+                app:cornerRadius="4dp" />
+
+            <RadioGroup
+                android:id="@+id/radiogroup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tipSubtitle">
+
+                <com.google.android.material.radiobutton.MaterialRadioButton
+                    android:id="@+id/radio1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="20dp"
+                    android:text="Yes, I learned something new" />
+
+                <com.google.android.material.radiobutton.MaterialRadioButton
+                    android:id="@+id/radio2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="20dp"
+                    android:text="No, I already knew this" />
+            </RadioGroup>
+
+        </RelativeLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+
+</RelativeLayout>

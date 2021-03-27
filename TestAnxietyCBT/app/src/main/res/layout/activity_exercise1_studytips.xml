@@ -6,20 +6,23 @@
     android:layout_height="match_parent"
     tools:context=".IntroductionTest">
 
-    <androidx.viewpager.widget.ViewPager
-        android:id="@+id/view_pager"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior">
-
-        <com.google.android.material.tabs.TabLayout
-            android:id="@+id/tablayout"
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/view_pager"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#E8E9F3"
-            app:tabBackground="@drawable/t_selector"
-            app:tabGravity="center"
-            app:tabIndicatorHeight="0dp" />
-    </androidx.viewpager.widget.ViewPager>
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            android:layout_gravity="bottom" >
+
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/tablayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#E8E9F3"
+                app:tabBackground="@drawable/t_selector"
+                app:tabGravity="center"
+                android:layout_marginTop="400dp"
+                app:tabIndicatorGravity="bottom"
+                app:tabIndicatorHeight="0dp" />
+        </androidx.viewpager.widget.ViewPager>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -264,26 +264,29 @@
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/dateButton"
+                style="@style/MaterialButtonStyle"
                 android:layout_width="300dp"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/countdown"
                 android:layout_centerHorizontal="true"
+                android:clickable="true"
                 android:text="Schedule Exercise"
-                android:visibility="visible" />
+                android:visibility="gone" />
 
             <Button
                 android:id="@+id/reschedulebutton"
                 style="@style/Widget.MaterialComponents.Button.OutlinedButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="350dp"
+                android:layout_marginTop="315dp"
                 android:background="@color/colorTransparent"
                 android:insetTop="0dp"
                 android:insetBottom="0dp"
                 android:paddingStart="20dp"
-                android:text="reschedule exercise"
+                android:text="schedule exercise"
                 android:textColor="@color/onhover"
                 android:textSize="10sp"
+
                 app:icon="@drawable/ic_schedule_black_24dp" />
 
             <Button
@@ -294,7 +297,7 @@
                 android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
                 android:layout_marginStart="1dp"
-                android:layout_marginTop="315dp"
+                android:layout_marginTop="350dp"
                 android:background="@color/colorTransparent"
                 android:insetTop="0dp"
                 android:insetBottom="0dp"
@@ -306,14 +309,55 @@
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/startExercise"
+                style="@style/MaterialButtonStyle"
                 android:layout_width="300dp"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/countdown"
                 android:layout_centerHorizontal="true"
+                android:clickable="true"
+                android:enabled="false"
                 android:text="Exercise Available"
-                android:visibility="invisible" />
+                android:visibility="visible" />
 
 
         </RelativeLayout>
     </com.google.android.material.card.MaterialCardView>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+    <com.google.android.material.bottomappbar.BottomAppBar
+        android:id="@+id/bottomAppBar2"
+        style="@style/Widget.MaterialComponents.BottomAppBar.Colored"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_gravity="bottom"
+        app:backgroundTint="@color/colorAccent"
+        tools:ignore="BottomAppBar" />
+
+    <TextView
+        android:id="@+id/userID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_centerVertical="true"
+        android:drawableLeft="@drawable/ic_person_black_24dp"
+        android:fontFamily="@font/lato"
+        android:gravity="center_vertical"
+        android:textColor="@color/mdtp_white" />
+
+        <TextView
+            android:id="@+id/logout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="275dp"
+            android:drawableLeft="@drawable/ic_exit_to_app_black_24dp"
+            android:fontFamily="@font/lato"
+            android:text="Logout"
+            android:gravity="center_vertical"
+            android:textColor="@color/mdtp_white" />
+    </RelativeLayout>
 </RelativeLayout>

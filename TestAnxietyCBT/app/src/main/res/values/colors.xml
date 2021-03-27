@@ -4,6 +4,7 @@
     <color name="colorPrimaryDark">#AF4448</color>
     <color name="colorPrimaryLight">#FFA4A2</color>
     <color name="colorSecondary">#c5cae9</color>
-    <color name="colorAccent">#AF4448</color>
+    <color name="colorAccent">#D15256</color>
     <color name="disabledcolor">#35558D</color>
+    <color name="unclickable">#51AF4448</color>
 </resources>

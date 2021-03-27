@@ -62,11 +62,14 @@ public class NotificationService extends Service {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 ExerciseSchedule exerciseSchedule = snapshot.getValue(ExerciseSchedule.class);
                 snapshot.getValue(ExerciseSchedule.class);
-                Your_X_SECS = (int)exerciseSchedule.SecondsTillExercise;
-                Log.i("NotiTest", "Notification Test => Pinging in " + Your_X_SECS + " seconds");
 
-                if (Your_X_SECS > 0)
-                startTimer();
+                if (exerciseSchedule != null) {
+                    Your_X_SECS = (int) exerciseSchedule.SecondsTillExercise;
+                    Log.i("NotiTest", "Notification Test => Pinging in " + Your_X_SECS + " seconds");
+
+                    if (Your_X_SECS > 0)
+                        startTimer();
+                }
             }
 
             @Override

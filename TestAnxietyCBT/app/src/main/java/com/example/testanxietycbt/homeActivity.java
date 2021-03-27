@@ -58,13 +58,12 @@ public class homeActivity extends AppCompatActivity implements DatePickerDialog.
     private int delay = 1000;
     String accentColor = "#AF4448";
     public long differenceInSeconds;
-    private boolean firstActivity = false;
+    TextView userID;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
-
 
         setContentView(R.layout.activity_home);
         BottomNavigationView bottomNav = findViewById(R.id.bottomNav);
@@ -77,21 +76,40 @@ public class homeActivity extends AppCompatActivity implements DatePickerDialog.
         activityScheduled = prefs.getInt("activityScheduled", 1);
         Log.i("ActivityScheduled", "Activityscheduled " + activityScheduled);
 
+        TextView logout = findViewById(R.id.logout);
+        logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FirebaseAuth.getInstance().signOut();
+                startActivity(new Intent(homeActivity.this, loginActivityFinal.class));
+                SharedPreferences rememberMe = getSharedPreferences("checkbox", MODE_PRIVATE);
+                SharedPreferences.Editor rememberEditor = rememberMe.edit();
+                rememberEditor.putString("remember", "false");
+                rememberEditor.apply();
+            }
+        });
+
+
         rootRef.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot snapshot) {
+
+                User user = snapshot.getValue(User.class);
+                userID = findViewById(R.id.userID);
+                if (user != null) {
+                    userID.setText(user.fullName);
+                }
+
                 if (snapshot.hasChild("Process")) {
                     Log.i("testxx", "Process found");
+
+                    startActivity(new Intent(homeActivity.this, Exercise_StudyTips.class));
                 }
                 else {
                     Log.i("testxx", "Process not found");
                     startActivity(new Intent(homeActivity.this, IntroductionTest.class));
                 }
 
-                if (snapshot.hasChild("NextActivity")){
-                    scheduleButton = findViewById(R.id.dateButton);
-                    scheduleButton.setVisibility(View.INVISIBLE);
-                }
             }
 
             @Override
@@ -325,15 +343,21 @@ public class homeActivity extends AppCompatActivity implements DatePickerDialog.
                     stringDate = sdf.parse(dateAndTime);
                     Log.i("DateTest", "Stringdate " + stringDate);
                     Button exerciseButton = findViewById(R.id.startExercise);
-                    if (getCurrentDateTime.compareTo(dateAndTime) >= 0 || firstActivity == false){
+                    if (date.isEmpty() && time.isEmpty()){
+                        exerciseButton.setText("PLEASE SCHEDULE AN EXERCISE!");
+                    }
+
+                    if (getCurrentDateTime.compareTo(dateAndTime) >= 0 ){
                         Log.i("DateTest", "Time surpassed.");
-                        exerciseButton.setVisibility(View.VISIBLE);
-                        firstActivity = true;
+                        exerciseButton.setEnabled(true);
+                        exerciseButton.setText("EXERCISE AVAILABLE!");
+
 
                     }
                     else {
                         Log.i("DateTest", "Havent reached time yet.");
-                        exerciseButton.setVisibility(View.GONE);
+                        exerciseButton.setEnabled(false);
+                        exerciseButton.setText("EXERCISE NOT AVAILABLE YET");
                     }
                 } catch (ParseException e) {
                    Log.i("DateTest", "exception " + e);
@@ -345,7 +369,6 @@ public class homeActivity extends AppCompatActivity implements DatePickerDialog.
                 ExerciseSchedule scheduledExercise = new ExerciseSchedule(date, time, differenceInSeconds);
                 rootRef.child("NextActivity").setValue(scheduledExercise);
 
-                final int currentActivityScheduled = prefs.getInt("activityScheduled", 0);
                 final Button dateButton = findViewById(R.id.dateButton);
                 final TextView reschedulebutton = findViewById(R.id.reschedulebutton);
 
@@ -359,14 +382,14 @@ public class homeActivity extends AppCompatActivity implements DatePickerDialog.
                             if (schedule.Date.isEmpty() && schedule.Time.isEmpty()) {
                                 activity_text.setVisibility(View.INVISIBLE);
                                 Log.i("ActivityTest", "Activity is Not scheduled setting Datebutton to VIS");
-                                dateButton.setVisibility(View.VISIBLE);
-                                reschedulebutton.setVisibility(View.INVISIBLE);
+                                //dateButton.setEnabled(true);
+                                //reschedulebutton.setEnabled(false);
 
                             } else {
                                 activity_text.setVisibility(View.VISIBLE);
                                 Log.i("ActivityTest", "Activity is Activity is Scheduled! at " + schedule.Date + " " + schedule.Time + "setting Datebutton to INVIS");
-                                dateButton.setVisibility(View.INVISIBLE);
-                                reschedulebutton.setVisibility(View.VISIBLE);
+                                //dateButton.setEnabled(false);
+                                //reschedulebutton.setEnabled(true);
                             }
                         }
                     }

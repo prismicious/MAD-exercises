@@ -171,6 +171,9 @@ public class Process extends AppCompatActivity implements DatePickerDialog.OnDat
                     DatabaseReference ref = database.getReference().child("Users").child(FirebaseAuth.getInstance().getUid()).child("Process");
                     firstExercise = true;
                     ref.setValue(thisProcess);
+                    DatabaseReference ref2 = database.getReference().child("Users").child(FirebaseAuth.getInstance().getUid()).child("NextActivity");
+                    //ExerciseSchedule scheduleInit = new ExerciseSchedule("","",99999);
+                    //ref2.setValue(scheduleInit);
                     countDownStarted = 1;
 
                 Log.i("Process", "Name: " + nameString + " desc: " + descString + " time: " +timeString + " date: " + dateString);

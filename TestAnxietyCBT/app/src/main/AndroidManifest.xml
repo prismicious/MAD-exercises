@@ -31,6 +31,7 @@
         </activity>
         <activity android:name=".RegisterUser" />
         <activity android:name=".Exercise_StudyTips" />
+        <activity android:name=".Exercise_ReImagery" />
         <activity
             android:name=".TestActivity"
             android:label="@string/title_activity_test"

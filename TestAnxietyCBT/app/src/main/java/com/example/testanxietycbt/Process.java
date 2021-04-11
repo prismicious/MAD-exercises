@@ -166,7 +166,7 @@ public class Process extends AppCompatActivity implements DatePickerDialog.OnDat
                     descString = "";
                     timeString = dialog_bt_time.getText().toString();
                     dateString = dialog_bt_date.getText().toString();
-
+                    int activitiesCompleted = 0;
                     ProcessModel thisProcess = new ProcessModel(nameString, descString, timeString, dateString, selectedChip);
                     DatabaseReference ref = database.getReference().child("Users").child(FirebaseAuth.getInstance().getUid()).child("Process");
                     firstExercise = true;
@@ -175,6 +175,9 @@ public class Process extends AppCompatActivity implements DatePickerDialog.OnDat
                     //ExerciseSchedule scheduleInit = new ExerciseSchedule("","",99999);
                     //ref2.setValue(scheduleInit);
                     countDownStarted = 1;
+                    DatabaseReference activitiesCompletedRef = database.getReference().child("Users").child(FirebaseAuth.getInstance().getUid()).child("Activities Done");
+                    ActivitiesDone ad = new ActivitiesDone(0);
+                    activitiesCompletedRef.setValue(ad);
 
                 Log.i("Process", "Name: " + nameString + " desc: " + descString + " time: " +timeString + " date: " + dateString);
                 startActivity(new Intent(Process.this, homeActivity.class));

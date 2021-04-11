@@ -142,7 +142,7 @@ public class PredictionActivity extends AppCompatActivity {
                     SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy - HH:mm:ss", Locale.getDefault());
                     currentDateandTime = sdf.format(new Date());
                     inputText = input.getEditText().getText().toString();
-                    Task task = new Task("Prediction Activity", currentDateandTime, inputText, selectedChip, dateButton.getText().toString(), checkBoxChecked);
+                    Task task = new Task("Prediction Activity", currentDateandTime, inputText, selectedChip, dateButton.getText().toString(), checkBoxChecked, "", "");
                     ref.child(String.valueOf(id)).setValue(task);
                     startActivity(new Intent(PredictionActivity.this, Dashboard.class));
 

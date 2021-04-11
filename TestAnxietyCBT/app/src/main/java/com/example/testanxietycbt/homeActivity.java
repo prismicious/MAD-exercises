@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
+import android.animation.ObjectAnimator;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
@@ -13,6 +14,9 @@ import android.util.Log;
 import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.animation.AlphaAnimation;
+import android.view.animation.Animation;
+import android.view.animation.BounceInterpolator;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -59,6 +63,7 @@ public class homeActivity extends AppCompatActivity implements DatePickerDialog.
     String accentColor = "#AF4448";
     public long differenceInSeconds;
     TextView userID;
+    private boolean datePicked = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -94,6 +99,8 @@ public class homeActivity extends AppCompatActivity implements DatePickerDialog.
             @Override
             public void onDataChange(DataSnapshot snapshot) {
 
+
+
                 User user = snapshot.getValue(User.class);
                 userID = findViewById(R.id.userID);
                 if (user != null) {
@@ -102,8 +109,10 @@ public class homeActivity extends AppCompatActivity implements DatePickerDialog.
 
                 if (snapshot.hasChild("Process")) {
                     Log.i("testxx", "Process found");
-
-                   // startActivity(new Intent(homeActivity.this, MainActivity.class));
+                    ActivitiesDone ad = snapshot.getValue(ActivitiesDone.class);
+                    int activitiesCompleted = ad.amount;
+                    Log.i("Completed", String.valueOf(activitiesCompleted));
+                   // startActivity(new Intent(homeActivity.this, Exercise_ReImagery.class));
                 }
                 else {
                     Log.i("testxx", "Process not found");
@@ -129,6 +138,32 @@ public class homeActivity extends AppCompatActivity implements DatePickerDialog.
                  exerciseSchedule = snapshot.getValue(ExerciseSchedule.class);
                 TextView date = findViewById(R.id.countdown);
                 TextView time = findViewById(R.id.countdownTime);
+
+                if (exerciseSchedule.Time.equals("")){
+                    Log.i("TestActivity", "Activity Not scheduled!");
+
+                    TextView scheduleExercise = findViewById(R.id.reschedulebutton);
+                    if (datePicked == false) {
+
+                        Toast.makeText(homeActivity.this, "No Exercise scheduled. Please schedule exercise!", Toast.LENGTH_LONG).show();
+                        ObjectAnimator animY = ObjectAnimator.ofFloat(scheduleExercise, "translationY", -5f, 5f);
+                        animY.setDuration(1000);//1sec
+                        animY.setInterpolator(new BounceInterpolator());
+                        animY.setRepeatCount(10);
+                        animY.start();
+
+                        /* Animation anim = new AlphaAnimation(0.0f, 1.0f);
+                        anim.setDuration(1000); //You can manage the blinking time with this parameter
+                        anim.setStartOffset(20);
+                        anim.setRepeatMode(Animation.REVERSE);
+                        anim.setRepeatCount(Animation.INFINITE);
+                        scheduleExercise.startAnimation(anim); */
+                        datePicked = true;
+                    }
+                    else {
+                        scheduleExercise.clearAnimation();
+                    }
+                }
 
                 if (exerciseSchedule != null) {
                     dateString = exerciseSchedule.Date;

@@ -163,7 +163,7 @@ public class MainActivity extends AppCompatActivity {
         editor = prefs.edit();
         editor.putString("Answer4", inputText4);
         editor.apply();
-        Intent i = new Intent(MainActivity.this, DecataOverviewFragment.class);
+        Intent i = new Intent(MainActivity.this, Dashboard.class);
         Date currentTime = Calendar.getInstance().getTime();
         SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy - HH:mm:ss", Locale.getDefault());
         currentDateandTime = sdf.format(new Date());
@@ -176,7 +176,10 @@ public class MainActivity extends AppCompatActivity {
            delay(100);
         }
 
-        Task task = new Task("Decatastrophizing Task", currentDateandTime, inputText1, inputText2, inputText3, inputText4);
+        DatabaseReference activitiesCompletedRef = database.getReference().child("Users").child(FirebaseAuth.getInstance().getUid()).child("Activities Done");
+        ActivitiesDone ad = new ActivitiesDone(2);
+        activitiesCompletedRef.setValue(ad);
+        Task task = new Task("Decatastrophizing Task", currentDateandTime, inputText1, inputText2, inputText3, inputText4, "", "");
         ref2.child(String.valueOf(id)).setValue(task);
         startActivity(i);
 

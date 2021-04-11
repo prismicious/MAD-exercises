@@ -74,45 +74,47 @@
                 android:layout_marginTop="10dp"
                 android:textAlignment="center"
                 android:text="ExpandTest1" />
+
             <TextView
-                android:layout_marginTop="20dp"
-                android:layout_marginLeft="20dp"
-                android:textColor="@color/colorPrimary"
-                style="@style/layoutTheme"
-                android:layout_marginRight="8dp"
                 android:id="@+id/expandedCardQuestion1"
+                style="@style/layoutTheme"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/expandedCardTitle"
-                android:text="expandedCardQuestion1"
-                android:textStyle="bold"
-                />
-            <TextView
                 android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="8dp"
+                android:paddingTop="20dp"
+                android:text="expandedCardQuestion1"
+                android:textColor="@color/colorPrimary"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/expandedCardAnswer1"
                 style="@style/layoutTheme"
 
-                android:layout_marginRight="8dp"
-                android:id="@+id/expandedCardAnswer1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/expandedCardQuestion1"
-                android:text="expandedCardAnswer1"
-                />
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="8dp"
+                android:paddingTop="0dp"
+                android:text="expandedCardAnswer1" />
 
 
             <TextView
-                android:layout_marginTop="20dp"
-                android:layout_marginLeft="20dp"
-                style="@style/layoutTheme"
-                android:textColor="@color/colorPrimary"
-                android:layout_marginRight="8dp"
                 android:id="@+id/expandedCardQuestion2"
+                style="@style/layoutTheme"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/expandedCardAnswer1"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginRight="8dp"
+                android:paddingTop="20dp"
                 android:text="expandedCardQuestion2"
-                android:textStyle="bold"
-                />
+                android:textColor="@color/colorPrimary"
+                android:textStyle="bold" />
             <TextView
                 android:layout_marginLeft="20dp"
                 style="@style/layoutTheme"
@@ -125,18 +127,18 @@
                 />
 
             <TextView
-                android:layout_marginTop="20dp"
-                android:layout_marginLeft="20dp"
-                style="@style/layoutTheme"
-                android:textColor="@color/colorPrimary"
-                android:layout_marginRight="8dp"
                 android:id="@+id/expandedCardQuestion3"
+                style="@style/layoutTheme"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/expandedCardAnswer2"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginRight="8dp"
+                android:paddingTop="20dp"
                 android:text="expandedCardQuestion3"
-                android:textStyle="bold"
-                />
+                android:textColor="@color/colorPrimary"
+                android:textStyle="bold" />
             <TextView
                 android:layout_marginLeft="20dp"
                 style="@style/layoutTheme"
@@ -150,31 +152,84 @@
                 />
 
             <TextView
-                android:layout_marginTop="20dp"
-                android:layout_marginLeft="20dp"
-                style="@style/layoutTheme"
-                android:textColor="@color/colorPrimary"
-                android:layout_marginRight="8dp"
                 android:id="@+id/expandedCardQuestion4"
+                style="@style/layoutTheme"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/expandedCardAnswer3"
-                android:text="expandedCardQuestion4"
-                android:textStyle="bold"
-                />
-            <TextView
                 android:layout_marginLeft="20dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginRight="8dp"
+                android:paddingTop="20dp"
+                android:text="expandedCardQuestion4"
+                android:textColor="@color/colorPrimary"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/expandedCardAnswer4"
                 style="@style/layoutTheme"
 
-                android:layout_marginRight="8dp"
-                android:id="@+id/expandedCardAnswer4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/expandedCardQuestion4"
-                android:text="expandedCardAnswer4"
-                android:layout_marginBottom="20dp"
-                />
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginBottom="0dp"
+                android:text="expandedCardAnswer4" />
 
+            <TextView
+                android:id="@+id/expandedCardQuestion5"
+                style="@style/layoutTheme"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/expandedCardAnswer4"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginRight="8dp"
+                android:paddingTop="20dp"
+                android:text="expandedCardQuestion5"
+                android:textColor="@color/colorPrimary"
+
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/expandedCardAnswer5"
+                style="@style/layoutTheme"
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/expandedCardQuestion5"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginBottom="0dp"
+                android:text="expandedCardAnswer5" />
+
+            <TextView
+                android:id="@+id/expandedCardQuestion6"
+                style="@style/layoutTheme"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/expandedCardAnswer5"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginRight="8dp"
+                android:paddingTop="20dp"
+                android:text="expandedCardQuestion6"
+                android:textColor="@color/colorPrimary"
+
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/expandedCardAnswer6"
+                style="@style/layoutTheme"
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/expandedCardQuestion6"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginBottom="20dp"
+                android:text="expandedCardAnswer6" />
 
 
         </RelativeLayout>

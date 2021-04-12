@@ -112,7 +112,7 @@ public class homeActivity extends AppCompatActivity implements DatePickerDialog.
                     ActivitiesDone ad = snapshot.getValue(ActivitiesDone.class);
                     int activitiesCompleted = ad.amount;
                     Log.i("Completed", String.valueOf(activitiesCompleted));
-                   // startActivity(new Intent(homeActivity.this, Exercise_ReImagery.class));
+                    startActivity(new Intent(homeActivity.this, Exercise_Exposure.class));
                 }
                 else {
                     Log.i("testxx", "Process not found");

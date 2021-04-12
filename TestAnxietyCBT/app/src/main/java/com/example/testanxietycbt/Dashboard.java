@@ -129,6 +129,11 @@ public class Dashboard extends AppCompatActivity {
                         holder.setAnswers(model.TimeTaskCompleted,"","","","","");
                     }
 
+                if(model.TaskName.equals("Simulation task")){
+                    holder.setQuestion("Task Completed","","","","","");
+                    holder.setAnswers(model.TimeTaskCompleted,"","","","","");
+                }
+
 
                         holder.itemView.setOnClickListener(new View.OnClickListener() {
                             @Override
